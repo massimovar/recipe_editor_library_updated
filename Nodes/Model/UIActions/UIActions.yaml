@@ -1,0 +1,11 @@
+Name: UIActions
+Type: FolderType
+Children:
+- Name: ForceRefreshRecipeUIOnDelete
+  Id: g=41775e9e4c9ca7be7d2124e658f86d9f
+  Type: BaseDataVariableType
+  DataType: Boolean
+- Name: ForceRefreshRecipeUIOnSave
+  Id: g=11b651832ec0a7223b282c26fbe219fd
+  Type: BaseDataVariableType
+  DataType: Boolean

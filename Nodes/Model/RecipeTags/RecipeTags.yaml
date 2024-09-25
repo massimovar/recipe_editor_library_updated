@@ -1,0 +1,19 @@
+Name: RecipeTags
+Id: g=a7a309da49772627fe9807440d9f4b84
+Type: FolderType
+Children:
+- Name: Variable1_PLC1
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable2_PLC1
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable3_PLC2
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable4_PLC3
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable5_PLC3
+  Type: BaseDataVariableType
+  DataType: Int32

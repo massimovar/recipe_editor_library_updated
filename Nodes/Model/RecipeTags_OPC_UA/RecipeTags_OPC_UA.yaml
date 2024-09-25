@@ -1,0 +1,28 @@
+Name: RecipeTags_OPC_UA
+Id: g=5bec4853467d337474d7db5e20672c68
+Type: FolderType
+Children:
+- Name: Variable1_PLC1
+  Id: g=8392dfd3030eeb5a76fc16988fe5bcd1
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable2_PLC1
+  Id: g=2c5cd51cec7b61dcae90c8e6813f42ec
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable3_PLC2
+  Id: g=763a48e6bc8be0c029a2b8ee85621af3
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable4_PLC3
+  Id: g=f9f633cde1120dc9169f994e011a1bb2
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable5_PLC3
+  Id: g=5753b810f9f095bbe380c076da62ecdd
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: OPCUARecipeName
+  Id: g=8ab85da0fbd016292cfb7bbd02de702b
+  Type: BaseDataVariableType
+  DataType: String

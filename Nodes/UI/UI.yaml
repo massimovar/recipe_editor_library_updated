@@ -2984,5 +2984,22 @@ Children:
         Type: PropertyType
         DataType: NodeId
         Value: "/Objects/recipe_editor_library_updated/Recipes/RecipeSchema1/EditModel"
+    - Name: ns=13;LibraryReference
+      Type: ObjectLibraryReference
+      DataType: ObjectLibraryReferenceDataType
+      ModellingRule: None
+      Value: 
+       {
+        "TypeId": {
+         "Id": 72,
+         "Namespace": 13
+        },
+        "Body": {
+         "libraryGuid": "5a4b7e93c06f223e505106c0f913b63b",
+         "objectGuid": "1605b4bce2d50a4e728a74a6d8448ee8",
+         "objectVersion": 1,
+         "highestIgnoredVersion": 0
+        }
+       }
 - File: Screens/Screens.yaml
 - File: Dialogs/Dialogs.yaml

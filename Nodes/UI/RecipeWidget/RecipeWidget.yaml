@@ -1009,7 +1009,6 @@ Children:
           Type: BaseVariableType
           DataType: Size
           ModellingRule: Optional
-          Value: 200.0
         - Name: HorizontalAlignment
           Type: BaseVariableType
           DataType: HorizontalAlignment
@@ -1062,7 +1061,6 @@ Children:
     - Name: RecipeSchema
       Type: NodePointer
       DataType: NodeId
-      Value: "/Objects/recipe_editor_library_updated/Recipes/RecipeSchema1"
       Children:
       - Name: Kind
         Type: PropertyType
@@ -1071,7 +1069,7 @@ Children:
       - Name: DynamicLink
         Type: DynamicLink
         DataType: NodePath
-        Value: "{RecipeSchema}@NodeId"
+        Value: "../../RecipeSchema@Pointer"
         Children:
         - Name: Mode
           Type: BaseVariableType
@@ -2324,7 +2322,7 @@ Children:
     },
     "Body": {
      "libraryGuid": "74d05e94a7a98386b4116547588ca41a",
-     "objectGuid": "f5f65c5738cd63c870563b1df298306c",
+     "objectGuid": "17e20786904e6b012563d4c68f2eae0b",
      "objectVersion": 1,
      "highestIgnoredVersion": 0
     }

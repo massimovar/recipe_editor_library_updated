@@ -51,8 +51,6 @@ public class RecipesEditorUISetup : BaseNetLogic
             var controlsContainer = GetControlsContainer();
             CleanUI(controlsContainer);
 
-            ConfigureComboBox();
-
             var targetNode = GetTargetNode();
 
             BuildUIFromSchemaRecursive(rootNode, targetNode, controlsContainer, new List<string>());
@@ -103,23 +101,6 @@ public class RecipesEditorUISetup : BaseNetLogic
         controlsContainer.Children.Clear();
         controlsContainer.Height = 0;
         controlsContainer.HorizontalAlignment = HorizontalAlignment.Stretch;
-    }
-
-    private void ConfigureComboBox()
-    {
-        // Set store as model for ComboBox
-        var recipesComboBox = Owner.Get<ComboBox>("RecipesComboBox");
-        if (recipesComboBox == null)
-            throw new Exception("Recipes ComboBox not found");
-
-        if (schema.Store == null)
-            throw new Exception("Store of schema " + schema.BrowseName + " is not set");
-
-        recipesComboBox.Model = schema.Store;
-
-        // Set query of combobox with correct table name
-        var tableName = !String.IsNullOrEmpty(schema.TableName) ? schema.TableName : schema.BrowseName;
-        recipesComboBox.Query = "SELECT Name FROM \"" + tableName + "\"";
     }
 
     private IUANode GetTargetNode()

@@ -80,7 +80,7 @@ Children:
       Type: PropertyType
       DataType: NodeId
   - Name: EditModel
-    Id: g=273db7a9d2a4e454d149745bbc3f241a
+    Id: g=7dd96e1ced3667a0d8bd18fa613b6ce0
     Type: BaseObjectType
     Children:
     - Name: Variable1_PLC1

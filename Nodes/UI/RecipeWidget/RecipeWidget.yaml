@@ -10,12 +10,12 @@ Children:
     Type: BaseVariableType
     DataType: Size
     ModellingRule: Optional
-    Value: 300.0
+    Value: 780.0
   - Name: Height
     Type: BaseVariableType
     DataType: Size
     ModellingRule: Optional
-    Value: 300.0
+    Value: 620.0
   - Name: Rows
     Type: BaseDataVariableType
     DataType: String
@@ -1031,471 +1031,6 @@ Children:
           Type: BaseVariableType
           DataType: Size
           ModellingRule: Optional
-        - Name: Variable1_PLC1
-          Type: Panel
-          Children:
-          - Name: Height
-            Type: BaseVariableType
-            DataType: Size
-            ModellingRule: Optional
-            Value: 40.0
-          - Name: HorizontalAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            ModellingRule: Optional
-            Value: 3
-          - Name: Path
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              ModellingRule: Optional
-              Value: {"LocaleId":"en-US","Text":"Variable1_PLC1"}
-            - Name: LeftMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 20.0
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-          - Name: CurrentValue
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable1_PLC1"
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-            - Name: HorizontalAlignment
-              Type: BaseVariableType
-              DataType: HorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-          - Name: SpinBox
-            Type: SpinBox
-            Children:
-            - Name: Value
-              Type: BaseDataVariableType
-              DataType: Double
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "{RecipeSchema1}/Variable1_PLC1"
-                Children:
-                - Name: Mode
-                  Type: BaseVariableType
-                  DataType: DynamicLinkMode
-                  Value: 2
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-            - Name: HorizontalAlignment
-              Type: BaseVariableType
-              DataType: HorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: RightMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 100.0
-            - Name: Width
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 100.0
-            - Name: Format
-              Type: BaseDataVariableType
-              DataType: String
-              ModellingRule: Optional
-              Value: "n0"
-        - Name: Variable2_PLC1
-          Type: Panel
-          Children:
-          - Name: Height
-            Type: BaseVariableType
-            DataType: Size
-            ModellingRule: Optional
-            Value: 40.0
-          - Name: HorizontalAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            ModellingRule: Optional
-            Value: 3
-          - Name: Path
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              ModellingRule: Optional
-              Value: {"LocaleId":"en-US","Text":"Variable2_PLC1"}
-            - Name: LeftMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 20.0
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-          - Name: CurrentValue
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable2_PLC1"
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-            - Name: HorizontalAlignment
-              Type: BaseVariableType
-              DataType: HorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-          - Name: SpinBox
-            Type: SpinBox
-            Children:
-            - Name: Value
-              Type: BaseDataVariableType
-              DataType: Double
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "{RecipeSchema1}/Variable2_PLC1"
-                Children:
-                - Name: Mode
-                  Type: BaseVariableType
-                  DataType: DynamicLinkMode
-                  Value: 2
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-            - Name: HorizontalAlignment
-              Type: BaseVariableType
-              DataType: HorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: RightMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 100.0
-            - Name: Width
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 100.0
-            - Name: Format
-              Type: BaseDataVariableType
-              DataType: String
-              ModellingRule: Optional
-              Value: "n0"
-        - Name: Variable3_PLC2
-          Type: Panel
-          Children:
-          - Name: Height
-            Type: BaseVariableType
-            DataType: Size
-            ModellingRule: Optional
-            Value: 40.0
-          - Name: HorizontalAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            ModellingRule: Optional
-            Value: 3
-          - Name: Path
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              ModellingRule: Optional
-              Value: {"LocaleId":"en-US","Text":"Variable3_PLC2"}
-            - Name: LeftMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 20.0
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-          - Name: CurrentValue
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable3_PLC2"
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-            - Name: HorizontalAlignment
-              Type: BaseVariableType
-              DataType: HorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-          - Name: SpinBox
-            Type: SpinBox
-            Children:
-            - Name: Value
-              Type: BaseDataVariableType
-              DataType: Double
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "{RecipeSchema1}/Variable3_PLC2"
-                Children:
-                - Name: Mode
-                  Type: BaseVariableType
-                  DataType: DynamicLinkMode
-                  Value: 2
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-            - Name: HorizontalAlignment
-              Type: BaseVariableType
-              DataType: HorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: RightMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 100.0
-            - Name: Width
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 100.0
-            - Name: Format
-              Type: BaseDataVariableType
-              DataType: String
-              ModellingRule: Optional
-              Value: "n0"
-        - Name: Variable4_PLC3
-          Type: Panel
-          Children:
-          - Name: Height
-            Type: BaseVariableType
-            DataType: Size
-            ModellingRule: Optional
-            Value: 40.0
-          - Name: HorizontalAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            ModellingRule: Optional
-            Value: 3
-          - Name: Path
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              ModellingRule: Optional
-              Value: {"LocaleId":"en-US","Text":"Variable4_PLC3"}
-            - Name: LeftMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 20.0
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-          - Name: CurrentValue
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable4_PLC3"
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-            - Name: HorizontalAlignment
-              Type: BaseVariableType
-              DataType: HorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-          - Name: SpinBox
-            Type: SpinBox
-            Children:
-            - Name: Value
-              Type: BaseDataVariableType
-              DataType: Double
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "{RecipeSchema1}/Variable4_PLC3"
-                Children:
-                - Name: Mode
-                  Type: BaseVariableType
-                  DataType: DynamicLinkMode
-                  Value: 2
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-            - Name: HorizontalAlignment
-              Type: BaseVariableType
-              DataType: HorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: RightMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 100.0
-            - Name: Width
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 100.0
-            - Name: Format
-              Type: BaseDataVariableType
-              DataType: String
-              ModellingRule: Optional
-              Value: "n0"
-        - Name: Variable5_PLC3
-          Type: Panel
-          Children:
-          - Name: Height
-            Type: BaseVariableType
-            DataType: Size
-            ModellingRule: Optional
-            Value: 40.0
-          - Name: HorizontalAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            ModellingRule: Optional
-            Value: 3
-          - Name: Path
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              ModellingRule: Optional
-              Value: {"LocaleId":"en-US","Text":"Variable5_PLC3"}
-            - Name: LeftMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 20.0
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-          - Name: CurrentValue
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable5_PLC3"
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-            - Name: HorizontalAlignment
-              Type: BaseVariableType
-              DataType: HorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-          - Name: SpinBox
-            Type: SpinBox
-            Children:
-            - Name: Value
-              Type: BaseDataVariableType
-              DataType: Double
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "{RecipeSchema1}/Variable5_PLC3"
-                Children:
-                - Name: Mode
-                  Type: BaseVariableType
-                  DataType: DynamicLinkMode
-                  Value: 2
-            - Name: VerticalAlignment
-              Type: BaseVariableType
-              DataType: VerticalAlignment
-              ModellingRule: Optional
-              Value: 2
-            - Name: HorizontalAlignment
-              Type: BaseVariableType
-              DataType: HorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: RightMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 100.0
-            - Name: Width
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 100.0
-            - Name: Format
-              Type: BaseDataVariableType
-              DataType: String
-              ModellingRule: Optional
-              Value: "n0"
       - Name: ScrollAxesEnabled
         Type: BaseDataVariableType
         DataType: ScrollAxesEnabledEnum
@@ -1551,7 +1086,6 @@ Children:
       Children:
       - Class: Method
         Name: Setup
-        Id: g=95aa9385dd853e5aed2a1484be585541
       - Name: BehaviourStartPriority
         Type: BehaviourStartPriorityVariableType
         DataType: Byte
@@ -2043,7 +1577,6 @@ Children:
     Children:
     - Class: Method
       Name: Delete
-      Id: g=8e7b5c9b77dadabcf3911e6de39a9b7a
       Children:
       - Name: ns=0;InputArguments
         Type: BaseVariableType
@@ -2054,13 +1587,10 @@ Children:
         Value: [{"TypeId":{"Id":296},"Body":{"Name":"RecipeName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
     - Class: Method
       Name: Export
-      Id: g=564c5c6cab09816d4fb0ed08415f7e3f
     - Class: Method
       Name: Import
-      Id: g=5fc06c0f3d4fc04955a642161a487731
     - Class: Method
       Name: ApplyFromDB
-      Id: g=1d479da5275bc785bcfdda123b1de2c7
       Children:
       - Name: ns=0;InputArguments
         Type: BaseVariableType
@@ -2071,7 +1601,6 @@ Children:
         Value: [{"TypeId":{"Id":296},"Body":{"Name":"RecipeName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":296},"Body":{"Name":"ErrorPolicy","DataType":{"Id":40,"Namespace":15},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
     - Class: Method
       Name: ApplyFromEditModel
-      Id: g=a2041d7e7ca78d40ab2d233034892e0a
       Children:
       - Name: ns=0;InputArguments
         Type: BaseVariableType
@@ -2082,7 +1611,6 @@ Children:
         Value: [{"TypeId":{"Id":296},"Body":{"Name":"ErrorPolicy","DataType":{"Id":40,"Namespace":15},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
     - Class: Method
       Name: LoadFromPLC
-      Id: g=37d461814bd149b0126aa77f0427cf8f
       Children:
       - Name: ns=0;InputArguments
         Type: BaseVariableType
@@ -2093,7 +1621,6 @@ Children:
         Value: [{"TypeId":{"Id":296},"Body":{"Name":"ErrorPolicy","DataType":{"Id":40,"Namespace":15},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
     - Class: Method
       Name: SaveToDB
-      Id: g=046eb021e2c183475e9bb1cd12cbfe83
       Children:
       - Name: ns=0;InputArguments
         Type: BaseVariableType
@@ -2104,7 +1631,6 @@ Children:
         Value: [{"TypeId":{"Id":296},"Body":{"Name":"RecipeName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":296},"Body":{"Name":"ErrorPolicy","DataType":{"Id":40,"Namespace":15},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
     - Class: Method
       Name: SelectFromDB
-      Id: g=7633ab609348b4e89e9c07b1fc852244
       Children:
       - Name: ns=0;InputArguments
         Type: BaseVariableType
@@ -2115,7 +1641,6 @@ Children:
         Value: [{"TypeId":{"Id":296},"Body":{"Name":"RecipeName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":296},"Body":{"Name":"ErrorPolicy","DataType":{"Id":40,"Namespace":15},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
     - Class: Method
       Name: ResetEditModel
-      Id: g=5b4f078889f77a208992fabd2bbfc46e
       Children:
       - Name: ns=0;InputArguments
         Type: BaseVariableType
@@ -2550,7 +2075,7 @@ Children:
           - Name: DynamicLink
             Type: DynamicLink
             DataType: NodePath
-            Value: "{RecipeSchema}@NodeId"
+            Value: "{RecipeSchemaEditModel}@NodeId"
   - Name: LoadRecipeConfirmation
     Type: ConfirmationDialogContext
     Children:
@@ -2764,7 +2289,6 @@ Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: "/Objects/recipe_editor_library_updated/Recipes/RecipeSchema1/EditModel"
   - Name: ns=13;LibraryReference
     Type: ObjectLibraryReference
     DataType: ObjectLibraryReferenceDataType
@@ -2781,6 +2305,13 @@ Children:
        "highestIgnoredVersion": 0
       }
      }
+  - Name: RecipeSchemaEditModel
+    Type: Alias
+    DataType: NodeId
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
 - File: ConfirmationDialog/ConfirmationDialog.yaml
 - Name: ns=13;LibraryReference
   Type: ObjectLibraryReference
@@ -2792,8 +2323,8 @@ Children:
      "Namespace": 13
     },
     "Body": {
-     "libraryGuid": "db4510bceb6f17f2957607a24536abb8",
-     "objectGuid": "016b7ea61ce53cfbf17a01a8cb988a95",
+     "libraryGuid": "74d05e94a7a98386b4116547588ca41a",
+     "objectGuid": "f5f65c5738cd63c870563b1df298306c",
      "objectVersion": 1,
      "highestIgnoredVersion": 0
     }

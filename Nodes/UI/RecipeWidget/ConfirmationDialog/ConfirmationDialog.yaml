@@ -1,4 +1,4 @@
-Name: Dialogs
+Name: ConfirmationDialog
 Type: FolderType
 Children:
 - Name: ConfirmationDialog
@@ -27,7 +27,7 @@ Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: "/Objects/recipe_editor_library_updated/UI/Dialogs/ConfirmationDialogContext"
+      Value: "/Objects/recipe_editor_library_updated/UI/RecipeWidget/ConfirmationDialog/ConfirmationDialogContext"
   - Name: Rectangle1
     Type: Rectangle
     Children:
@@ -45,7 +45,7 @@ Children:
       Type: BaseDataVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 1.0
+      Value: 3.0
     - Name: HorizontalAlignment
       Type: BaseVariableType
       DataType: HorizontalAlignment
@@ -56,6 +56,16 @@ Children:
       DataType: VerticalAlignment
       ModellingRule: Optional
       Value: 3
+    - Name: BorderColor
+      Type: BaseDataVariableType
+      DataType: Color
+      ModellingRule: Optional
+      Value: "#565555"
+    - Name: CornerRadius
+      Type: BaseDataVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 5.0
   - Name: Button1
     Type: Button
     Children:

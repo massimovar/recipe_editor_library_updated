@@ -230,5 +230,2174 @@ Children:
       Type: DynamicLink
       DataType: NodePath
       Value: "/Objects/recipe_editor_library_updated@BrowseName"
+  - Name: RecipeWidget1
+    Type: RecipeWidget
+    Children:
+    - Name: Rows
+      Type: BaseDataVariableType
+      DataType: String
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: ["100fr"]
+    - Name: Columns
+      Type: BaseDataVariableType
+      DataType: String
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: ["20fr","80fr"]
+    - Name: MainMenu
+      Type: ColumnLayout
+      Children:
+      - Name: Label1
+        Type: Label
+      - Name: HorizontalLayout1
+        Type: RowLayout
+        Children:
+        - Name: SearchField
+          Type: TextBox
+          Children:
+          - Name: Text
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+        - Name: Button1
+          Type: Button
+          Children:
+          - Name: MouseClickEventHandler1
+            Type: EventHandler
+            Children:
+            - Name: ListenEventType
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+            - Name: MethodsToCall
+              Type: BaseObjectType
+              Children:
+              - Name: MethodContainer1
+                Type: BaseObjectType
+                Children:
+                - Name: ObjectPointer
+                  Type: NodePointer
+                  DataType: NodeId
+                  Value: "/Objects/Commands/VariableCommands"
+                  Children:
+                  - Name: Kind
+                    Type: PropertyType
+                    DataType: NodeId
+                    Value: "/Types/ObjectTypes/BaseObjectType"
+                - Name: Method
+                  Type: BaseDataVariableType
+                  DataType: String
+                  Value: "Set"
+                - Name: InputArguments
+                  Type: BaseObjectType
+                  Children:
+                  - Name: VariableToModify
+                    Type: BaseDataVariableType
+                    DataType: VariablePointer
+                    Children:
+                    - Name: DynamicLink
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "../../../../../../SearchField/Text@NodeId"
+                  - Name: Value
+                    Type: BaseDataVariableType
+                    DataType: LocalizedText
+                  - Name: ArrayIndex
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    ValueRank: ScalarOrOneDimension
+            - Name: EventArguments
+              Type: MouseClickEvent
+              Children:
+              - Name: EventId
+                Type: PropertyType
+                DataType: ByteString
+              - Name: EventType
+                Type: PropertyType
+                DataType: NodeId
+              - Name: SourceNode
+                Type: PropertyType
+                DataType: NodeId
+              - Name: SourceName
+                Type: PropertyType
+                DataType: String
+              - Name: Time
+                Type: PropertyType
+                DataType: UtcTime
+              - Name: ReceiveTime
+                Type: PropertyType
+                DataType: UtcTime
+              - Name: Message
+                Type: PropertyType
+                DataType: LocalizedText
+              - Name: Severity
+                Type: PropertyType
+                DataType: UInt16
+      - Name: RecipeList
+        Type: ListBox
+        Children:
+        - Class: Reference
+          Target: ns=7;i=481
+          Direction: Forward
+        - Name: Model
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/recipe_editor_library_updated/DataStores/EmbeddedDatabase1"
+          Children:
+          - Name: ItemKind
+            Type: PropertyType
+            DataType: NodeId
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+        - Name: SelectedValue
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../StartingSelectedValue"
+        - Name: SelectedItem
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+        - Name: UISelectedItem
+          Type: BaseDataVariableType
+          DataType: NodeId
+          AccessLevel: Read
+        - Name: UISelectedValue
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          AccessLevel: Read
+        - Name: Item
+          Type: Alias
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+        - Name: Query
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "SELECT Name FROM \"RecipeSchema1\" ORDER BY Name"
+          Children:
+          - Name: StringFormatter1
+            Type: StringFormatter
+            Children:
+            - Name: SourceinputText
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../HorizontalLayout1/SearchField/Text"
+        - Name: DisplayValuePath
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{Item}/Name"
+        - Name: SelectedValuePath
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{Item}/Name"
+        - Name: UserSelectionChangedHandler1
+          Type: EventHandler
+          Children:
+          - Name: ListenEventType
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/EventTypes/BaseEventType/UserSelectionChanged"
+          - Name: MethodsToCall
+            Type: BaseObjectType
+            Children:
+            - Name: MethodContainer1
+              Type: BaseObjectType
+              Children:
+              - Name: ObjectPointer
+                Type: NodePointer
+                DataType: NodeId
+                Value: "/Objects/recipe_editor_library_updated/Recipes/RecipeSchema1"
+                Children:
+                - Name: Kind
+                  Type: PropertyType
+                  DataType: NodeId
+                  Value: "/Types/ObjectTypes/BaseObjectType"
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../RecipeController@NodeId"
+              - Name: Method
+                Type: BaseDataVariableType
+                DataType: String
+                Value: "SelectFromDB"
+              - Name: InputArguments
+                Type: BaseObjectType
+                Children:
+                - Name: RecipeName
+                  Type: BaseDataVariableType
+                  DataType: String
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../SelectedValue"
+                - Name: ErrorPolicy
+                  Type: BaseDataVariableType
+                  DataType: CopyErrorPolicy
+          - Name: EventArguments
+            Type: UserSelectionChanged
+            Children:
+            - Name: SelectedItem
+              Type: BaseDataVariableType
+              DataType: NodeId
+            - Name: SelectedValue
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+            - Name: EventId
+              Type: PropertyType
+              DataType: ByteString
+            - Name: EventType
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceNode
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceName
+              Type: PropertyType
+              DataType: String
+            - Name: Time
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: ReceiveTime
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: Message
+              Type: PropertyType
+              DataType: LocalizedText
+            - Name: Severity
+              Type: PropertyType
+              DataType: UInt16
+        - Name: StartingSelectedValue
+          Type: BaseDataVariableType
+          DataType: String
+    - Name: RecipesEditor1
+      Type: Panel
+      WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
+      Children:
+      - Name: ResultMessageLabel
+        Type: Label
+        Children:
+        - Name: Text
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../RecipeController/Message"
+      - Name: SaveButton
+        Type: Button
+        Children:
+        - Name: MouseClickEventHandler1
+          Type: EventHandler
+          Children:
+          - Name: ListenEventType
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+          - Name: MethodsToCall
+            Type: BaseObjectType
+            Children:
+            - Name: MethodContainer3
+              Type: BaseObjectType
+              Children:
+              - Name: ObjectPointer
+                Type: NodePointer
+                DataType: NodeId
+                Value: "/Objects/Commands/UICommands"
+                Children:
+                - Name: Kind
+                  Type: PropertyType
+                  DataType: NodeId
+                  Value: "/Types/ObjectTypes/BaseObjectType"
+              - Name: Method
+                Type: BaseDataVariableType
+                DataType: String
+                Value: "OpenDialog"
+              - Name: InputArguments
+                Type: BaseObjectType
+                Children:
+                - Name: Dialog
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  Value: "/Objects/recipe_editor_library_updated/UI/RecipeWidget/ConfirmationDialog/ConfirmationDialog"
+                - Name: AliasNode
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  ValueRank: ScalarOrOneDimension
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../../SaveRecipeConfirmation@NodeId"
+                - Name: ParentItem
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../..@NodeId"
+              - Name: OutputArguments
+                Type: BaseObjectType
+                Children:
+                - Name: DialogNodeId
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+          - Name: EventArguments
+            Type: MouseClickEvent
+            Children:
+            - Name: EventId
+              Type: PropertyType
+              DataType: ByteString
+            - Name: EventType
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceNode
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceName
+              Type: PropertyType
+              DataType: String
+            - Name: Time
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: ReceiveTime
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: Message
+              Type: PropertyType
+              DataType: LocalizedText
+            - Name: Severity
+              Type: PropertyType
+              DataType: UInt16
+        - Name: Enabled
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+          Children:
+          - Name: ExpressionEvaluator1
+            Type: ExpressionEvaluator
+            Children:
+            - Name: SourceRecipeNameTbx
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../RecipeNameTbx/Text"
+      - Name: DeleteButton
+        Type: Button
+        Children:
+        - Name: MouseClickEventHandler1
+          Type: EventHandler
+          Children:
+          - Name: ListenEventType
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+          - Name: MethodsToCall
+            Type: BaseObjectType
+            Children:
+            - Name: MethodContainer3
+              Type: BaseObjectType
+              Children:
+              - Name: ObjectPointer
+                Type: NodePointer
+                DataType: NodeId
+                Value: "/Objects/Commands/UICommands"
+                Children:
+                - Name: Kind
+                  Type: PropertyType
+                  DataType: NodeId
+                  Value: "/Types/ObjectTypes/BaseObjectType"
+              - Name: Method
+                Type: BaseDataVariableType
+                DataType: String
+                Value: "OpenDialog"
+              - Name: InputArguments
+                Type: BaseObjectType
+                Children:
+                - Name: Dialog
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  Value: "/Objects/recipe_editor_library_updated/UI/RecipeWidget/ConfirmationDialog/ConfirmationDialog"
+                - Name: AliasNode
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  ValueRank: ScalarOrOneDimension
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../../DeleteRecipeConfirmation@NodeId"
+                - Name: ParentItem
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../..@NodeId"
+              - Name: OutputArguments
+                Type: BaseObjectType
+                Children:
+                - Name: DialogNodeId
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+          - Name: EventArguments
+            Type: MouseClickEvent
+            Children:
+            - Name: EventId
+              Type: PropertyType
+              DataType: ByteString
+            - Name: EventType
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceNode
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceName
+              Type: PropertyType
+              DataType: String
+            - Name: Time
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: ReceiveTime
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: Message
+              Type: PropertyType
+              DataType: LocalizedText
+            - Name: Severity
+              Type: PropertyType
+              DataType: UInt16
+      - Name: LoadButton
+        Type: Button
+        Children:
+        - Name: MouseClickEventHandler1
+          Type: EventHandler
+          Children:
+          - Name: ListenEventType
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+          - Name: MethodsToCall
+            Type: BaseObjectType
+            Children:
+            - Name: MethodContainer1
+              Type: BaseObjectType
+              Children:
+              - Name: ObjectPointer
+                Type: NodePointer
+                DataType: NodeId
+                Value: "/Objects/Commands/UICommands"
+                Children:
+                - Name: Kind
+                  Type: PropertyType
+                  DataType: NodeId
+                  Value: "/Types/ObjectTypes/BaseObjectType"
+              - Name: Method
+                Type: BaseDataVariableType
+                DataType: String
+                Value: "OpenDialog"
+              - Name: InputArguments
+                Type: BaseObjectType
+                Children:
+                - Name: Dialog
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  Value: "/Objects/recipe_editor_library_updated/UI/RecipeWidget/ConfirmationDialog/ConfirmationDialog"
+                - Name: AliasNode
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  ValueRank: ScalarOrOneDimension
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../../LoadRecipeConfirmation@NodeId"
+                - Name: ParentItem
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../..@NodeId"
+              - Name: OutputArguments
+                Type: BaseObjectType
+                Children:
+                - Name: DialogNodeId
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+          - Name: EventArguments
+            Type: MouseClickEvent
+            Children:
+            - Name: EventId
+              Type: PropertyType
+              DataType: ByteString
+            - Name: EventType
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceNode
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceName
+              Type: PropertyType
+              DataType: String
+            - Name: Time
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: ReceiveTime
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: Message
+              Type: PropertyType
+              DataType: LocalizedText
+            - Name: Severity
+              Type: PropertyType
+              DataType: UInt16
+      - Name: ApplyButton
+        Type: Button
+        Children:
+        - Name: MouseClickEventHandler1
+          Type: EventHandler
+          Children:
+          - Name: ListenEventType
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+          - Name: MethodsToCall
+            Type: BaseObjectType
+            Children:
+            - Name: MethodContainer1
+              Type: BaseObjectType
+              Children:
+              - Name: ObjectPointer
+                Type: NodePointer
+                DataType: NodeId
+                Value: "/Objects/Commands/UICommands"
+                Children:
+                - Name: Kind
+                  Type: PropertyType
+                  DataType: NodeId
+                  Value: "/Types/ObjectTypes/BaseObjectType"
+              - Name: Method
+                Type: BaseDataVariableType
+                DataType: String
+                Value: "OpenDialog"
+              - Name: InputArguments
+                Type: BaseObjectType
+                Children:
+                - Name: Dialog
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  Value: "/Objects/recipe_editor_library_updated/UI/RecipeWidget/ConfirmationDialog/ConfirmationDialog"
+                - Name: AliasNode
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  ValueRank: ScalarOrOneDimension
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../../ApplyRecipeConfirmation@NodeId"
+                - Name: ParentItem
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../..@NodeId"
+              - Name: OutputArguments
+                Type: BaseObjectType
+                Children:
+                - Name: DialogNodeId
+                  Type: BaseDataVariableType
+                  DataType: NodeId
+          - Name: EventArguments
+            Type: MouseClickEvent
+            Children:
+            - Name: EventId
+              Type: PropertyType
+              DataType: ByteString
+            - Name: EventType
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceNode
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceName
+              Type: PropertyType
+              DataType: String
+            - Name: Time
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: ReceiveTime
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: Message
+              Type: PropertyType
+              DataType: LocalizedText
+            - Name: Severity
+              Type: PropertyType
+              DataType: UInt16
+      - Name: ScrollView
+        Type: ScrollView
+        Children:
+        - Name: ColumnLayout
+          Type: ColumnLayout
+          Children:
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 200.0
+          - Name: HorizontalAlignment
+            Type: BaseVariableType
+            DataType: HorizontalAlignment
+            ModellingRule: Optional
+            Value: 3
+          - Name: Variable1_PLC1
+            Type: Panel
+            Children:
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 40.0
+            - Name: HorizontalAlignment
+              Type: BaseVariableType
+              DataType: HorizontalAlignment
+              ModellingRule: Optional
+              Value: 3
+            - Name: Path
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                ModellingRule: Optional
+                Value: {"LocaleId":"en-US","Text":"Variable1_PLC1"}
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 20.0
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+            - Name: CurrentValue
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable1_PLC1"
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 1
+            - Name: SpinBox
+              Type: SpinBox
+              Children:
+              - Name: Value
+                Type: BaseDataVariableType
+                DataType: Double
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{RecipeSchema1}/Variable1_PLC1"
+                  Children:
+                  - Name: Mode
+                    Type: BaseVariableType
+                    DataType: DynamicLinkMode
+                    Value: 2
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 1
+              - Name: RightMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 100.0
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 100.0
+              - Name: Format
+                Type: BaseDataVariableType
+                DataType: String
+                ModellingRule: Optional
+                Value: "n0"
+          - Name: Variable2_PLC1
+            Type: Panel
+            Children:
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 40.0
+            - Name: HorizontalAlignment
+              Type: BaseVariableType
+              DataType: HorizontalAlignment
+              ModellingRule: Optional
+              Value: 3
+            - Name: Path
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                ModellingRule: Optional
+                Value: {"LocaleId":"en-US","Text":"Variable2_PLC1"}
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 20.0
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+            - Name: CurrentValue
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable2_PLC1"
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 1
+            - Name: SpinBox
+              Type: SpinBox
+              Children:
+              - Name: Value
+                Type: BaseDataVariableType
+                DataType: Double
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{RecipeSchema1}/Variable2_PLC1"
+                  Children:
+                  - Name: Mode
+                    Type: BaseVariableType
+                    DataType: DynamicLinkMode
+                    Value: 2
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 1
+              - Name: RightMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 100.0
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 100.0
+              - Name: Format
+                Type: BaseDataVariableType
+                DataType: String
+                ModellingRule: Optional
+                Value: "n0"
+          - Name: Variable3_PLC2
+            Type: Panel
+            Children:
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 40.0
+            - Name: HorizontalAlignment
+              Type: BaseVariableType
+              DataType: HorizontalAlignment
+              ModellingRule: Optional
+              Value: 3
+            - Name: Path
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                ModellingRule: Optional
+                Value: {"LocaleId":"en-US","Text":"Variable3_PLC2"}
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 20.0
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+            - Name: CurrentValue
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable3_PLC2"
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 1
+            - Name: SpinBox
+              Type: SpinBox
+              Children:
+              - Name: Value
+                Type: BaseDataVariableType
+                DataType: Double
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{RecipeSchema1}/Variable3_PLC2"
+                  Children:
+                  - Name: Mode
+                    Type: BaseVariableType
+                    DataType: DynamicLinkMode
+                    Value: 2
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 1
+              - Name: RightMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 100.0
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 100.0
+              - Name: Format
+                Type: BaseDataVariableType
+                DataType: String
+                ModellingRule: Optional
+                Value: "n0"
+          - Name: Variable4_PLC3
+            Type: Panel
+            Children:
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 40.0
+            - Name: HorizontalAlignment
+              Type: BaseVariableType
+              DataType: HorizontalAlignment
+              ModellingRule: Optional
+              Value: 3
+            - Name: Path
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                ModellingRule: Optional
+                Value: {"LocaleId":"en-US","Text":"Variable4_PLC3"}
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 20.0
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+            - Name: CurrentValue
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable4_PLC3"
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 1
+            - Name: SpinBox
+              Type: SpinBox
+              Children:
+              - Name: Value
+                Type: BaseDataVariableType
+                DataType: Double
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{RecipeSchema1}/Variable4_PLC3"
+                  Children:
+                  - Name: Mode
+                    Type: BaseVariableType
+                    DataType: DynamicLinkMode
+                    Value: 2
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 1
+              - Name: RightMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 100.0
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 100.0
+              - Name: Format
+                Type: BaseDataVariableType
+                DataType: String
+                ModellingRule: Optional
+                Value: "n0"
+          - Name: Variable5_PLC3
+            Type: Panel
+            Children:
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 40.0
+            - Name: HorizontalAlignment
+              Type: BaseVariableType
+              DataType: HorizontalAlignment
+              ModellingRule: Optional
+              Value: 3
+            - Name: Path
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                ModellingRule: Optional
+                Value: {"LocaleId":"en-US","Text":"Variable5_PLC3"}
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 20.0
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+            - Name: CurrentValue
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable5_PLC3"
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 1
+            - Name: SpinBox
+              Type: SpinBox
+              Children:
+              - Name: Value
+                Type: BaseDataVariableType
+                DataType: Double
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{RecipeSchema1}/Variable5_PLC3"
+                  Children:
+                  - Name: Mode
+                    Type: BaseVariableType
+                    DataType: DynamicLinkMode
+                    Value: 2
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 1
+              - Name: RightMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 100.0
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 100.0
+              - Name: Format
+                Type: BaseDataVariableType
+                DataType: String
+                ModellingRule: Optional
+                Value: "n0"
+        - Name: Visible
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+          Children:
+          - Name: ExpressionEvaluator1
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Source0
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../MainMenu/RecipeList/StartingSelectedValue"
+      - Name: GenerateTranslationKeys
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: RecipesEditorUISetup
+        Type: NetLogic
+        Children:
+        - Class: Reference
+          Target: g=95aa9385dd853e5aed2a1484be585541
+          Direction: Forward
+        - Name: BehaviourStartPriority
+          Type: BehaviourStartPriorityVariableType
+          DataType: Byte
+          Value: 180
+      - Name: LibraryReference
+        Type: ObjectLibraryReference
+        DataType: ObjectLibraryReferenceDataType
+        Value: 
+         {
+          "TypeId": {
+           "Id": 72,
+           "Namespace": 13
+          },
+          "Body": {
+           "libraryGuid": "de905a58759b4ff38bbb66c9d44c67ad",
+           "objectGuid": "9ca79497a9f25b5941adc5c621736682",
+           "objectVersion": 1,
+           "highestIgnoredVersion": 0
+          }
+         }
+      - Name: RecipeNameTbx
+        Type: TextBox
+        Children:
+        - Name: Text
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../MainMenu/RecipeList/SelectedValue"
+        - Name: ModifiedTextHandler1
+          Type: EventHandler
+          Children:
+          - Name: ListenEventType
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/EventTypes/BaseEventType/UserTextChanged"
+          - Name: MethodsToCall
+            Type: BaseObjectType
+            Children:
+            - Name: MethodContainer2
+              Type: BaseObjectType
+              Children:
+              - Name: ObjectPointer
+                Type: NodePointer
+                DataType: NodeId
+                Value: "/Objects/Commands/VariableCommands"
+                Children:
+                - Name: Kind
+                  Type: PropertyType
+                  DataType: NodeId
+                  Value: "/Types/ObjectTypes/BaseObjectType"
+              - Name: Method
+                Type: BaseDataVariableType
+                DataType: String
+                Value: "Set"
+              - Name: InputArguments
+                Type: BaseObjectType
+                Children:
+                - Name: VariableToModify
+                  Type: BaseDataVariableType
+                  DataType: VariablePointer
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../../MainMenu/RecipeList/SelectedValue@NodeId"
+                - Name: Value
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  Value: {"Type":12,"Body":""}
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../Text"
+                - Name: ArrayIndex
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  ValueRank: ScalarOrOneDimension
+          - Name: EventArguments
+            Type: UserTextChanged
+            Children:
+            - Name: NewText
+              Type: BaseDataVariableType
+              DataType: LocalizedText
+            - Name: EventId
+              Type: PropertyType
+              DataType: ByteString
+            - Name: EventType
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceNode
+              Type: PropertyType
+              DataType: NodeId
+            - Name: SourceName
+              Type: PropertyType
+              DataType: String
+            - Name: Time
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: ReceiveTime
+              Type: PropertyType
+              DataType: UtcTime
+            - Name: Message
+              Type: PropertyType
+              DataType: LocalizedText
+            - Name: Severity
+              Type: PropertyType
+              DataType: UInt16
+      - Name: Label1
+        Type: Label
+        Children:
+        - Name: Text
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Children:
+          - Name: StringFormatter1
+            Type: StringFormatter
+            Children:
+            - Name: SourcelastDBAppliedRecipe
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../RecipeController/LastAppliedRecipe"
+      - Name: RecipeSchema
+        Type: NodePointer
+        DataType: NodeId
+        Value: "/Objects/recipe_editor_library_updated/Recipes/RecipeSchema1"
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/RecipeSchema"
+      - Name: RecipeSchemaEditModel
+        Type: NodePointer
+        DataType: NodeId
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{RecipeSchema1}@NodeId"
+          Children:
+          - Name: Mode
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+    - Name: ForceUIRefreshOnDelete
+      Type: BaseDataVariableType
+      DataType: Boolean
+    - Name: ForceUIRefreshChanged
+      Type: VariableChangedEventDispatcher
+      Children:
+      - Name: VariableNodePath
+        Type: BaseVariableType
+        DataType: NodePath
+        Value: "../ForceUIRefreshOnDelete"
+      - Name: VariableValueChangedEventHandler1
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+        - Name: MethodsToCall
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Type: NodePointer
+              DataType: NodeId
+              Children:
+              - Name: Kind
+                Type: PropertyType
+                DataType: NodeId
+                Value: "/Types/ObjectTypes/BaseObjectType"
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../MainMenu/RecipeList@NodeId"
+            - Name: Method
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Refresh"
+          - Name: MethodContainer2
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Type: NodePointer
+              DataType: NodeId
+              Value: "/Objects/Commands/VariableCommands"
+              Children:
+              - Name: Kind
+                Type: PropertyType
+                DataType: NodeId
+                Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: Method
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Set"
+            - Name: InputArguments
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../RecipesEditor1/RecipeNameTbx/Text@NodeId"
+              - Name: Value
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+              - Name: ArrayIndex
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+          - Name: MethodContainer3
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Type: NodePointer
+              DataType: NodeId
+              Value: "/Objects/Commands/VariableCommands"
+              Children:
+              - Name: Kind
+                Type: PropertyType
+                DataType: NodeId
+                Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: Method
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Set"
+            - Name: InputArguments
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../RecipeController/RecipeName@NodeId"
+              - Name: Value
+                Type: BaseDataVariableType
+                DataType: String
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../RecipeController/RecipeName"
+              - Name: ArrayIndex
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+        - Name: EventArguments
+          Type: VariableValueChangedEvent
+          Children:
+          - Name: VariableNodeId
+            Type: BaseVariableType
+            DataType: NodeId
+          - Name: NewValue
+            Type: BaseVariableType
+            DataType: BaseDataType
+          - Name: OldValue
+            Type: BaseVariableType
+            DataType: BaseDataType
+          - Name: EventId
+            Type: PropertyType
+            DataType: ByteString
+          - Name: EventType
+            Type: PropertyType
+            DataType: NodeId
+          - Name: SourceNode
+            Type: PropertyType
+            DataType: NodeId
+          - Name: SourceName
+            Type: PropertyType
+            DataType: String
+          - Name: Time
+            Type: PropertyType
+            DataType: UtcTime
+          - Name: ReceiveTime
+            Type: PropertyType
+            DataType: UtcTime
+          - Name: Message
+            Type: PropertyType
+            DataType: LocalizedText
+          - Name: Severity
+            Type: PropertyType
+            DataType: UInt16
+    - Name: ForceRefreshOnSave
+      Type: BaseDataVariableType
+      DataType: Boolean
+    - Name: ForceRefreshOnSaveChanged
+      Type: VariableChangedEventDispatcher
+      Children:
+      - Name: VariableNodePath
+        Type: BaseVariableType
+        DataType: NodePath
+        Value: "../ForceRefreshOnSave"
+      - Name: VariableValueChangedEventHandler1
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+        - Name: MethodsToCall
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Type: NodePointer
+              DataType: NodeId
+              Children:
+              - Name: Kind
+                Type: PropertyType
+                DataType: NodeId
+                Value: "/Types/ObjectTypes/BaseObjectType"
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../MainMenu/RecipeList@NodeId"
+            - Name: Method
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Refresh"
+        - Name: EventArguments
+          Type: VariableValueChangedEvent
+          Children:
+          - Name: VariableNodeId
+            Type: BaseVariableType
+            DataType: NodeId
+          - Name: NewValue
+            Type: BaseVariableType
+            DataType: BaseDataType
+          - Name: OldValue
+            Type: BaseVariableType
+            DataType: BaseDataType
+          - Name: EventId
+            Type: PropertyType
+            DataType: ByteString
+          - Name: EventType
+            Type: PropertyType
+            DataType: NodeId
+          - Name: SourceNode
+            Type: PropertyType
+            DataType: NodeId
+          - Name: SourceName
+            Type: PropertyType
+            DataType: String
+          - Name: Time
+            Type: PropertyType
+            DataType: UtcTime
+          - Name: ReceiveTime
+            Type: PropertyType
+            DataType: UtcTime
+          - Name: Message
+            Type: PropertyType
+            DataType: LocalizedText
+          - Name: Severity
+            Type: PropertyType
+            DataType: UInt16
+    - Name: Label1
+      Type: Label
+    - Name: SpinBox1
+      Type: SpinBox
+      Children:
+      - Name: Value
+        Type: BaseDataVariableType
+        DataType: Double
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../RecipeController/EditModelChanged"
+    - Name: RecipeController
+      Type: NetLogic
+      Children:
+      - Class: Reference
+        Target: g=8e7b5c9b77dadabcf3911e6de39a9b7a
+        Direction: Forward
+      - Class: Reference
+        Target: g=564c5c6cab09816d4fb0ed08415f7e3f
+        Direction: Forward
+      - Class: Reference
+        Target: g=5fc06c0f3d4fc04955a642161a487731
+        Direction: Forward
+      - Class: Reference
+        Target: g=1d479da5275bc785bcfdda123b1de2c7
+        Direction: Forward
+      - Class: Reference
+        Target: g=a2041d7e7ca78d40ab2d233034892e0a
+        Direction: Forward
+      - Class: Reference
+        Target: g=37d461814bd149b0126aa77f0427cf8f
+        Direction: Forward
+      - Class: Reference
+        Target: g=046eb021e2c183475e9bb1cd12cbfe83
+        Direction: Forward
+      - Class: Reference
+        Target: g=7633ab609348b4e89e9c07b1fc852244
+        Direction: Forward
+      - Class: Reference
+        Target: g=5b4f078889f77a208992fabd2bbfc46e
+        Direction: Forward
+      - Name: Result
+        Type: BaseDataVariableType
+        DataType: Byte
+        AccessLevel: Read
+      - Name: Message
+        Type: BaseDataVariableType
+        DataType: String
+        AccessLevel: Read
+      - Name: LastAppliedRecipe
+        Type: BaseDataVariableType
+        DataType: String
+        AccessLevel: Read
+      - Name: RecipeSchema
+        Type: NodePointer
+        DataType: NodeId
+        Value: "/Objects/recipe_editor_library_updated/Recipes/RecipeSchema1"
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/RecipeSchema"
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../RecipesEditor1/RecipeSchema@NodeId"
+      - Name: CSVFile
+        Type: BaseDataVariableType
+        DataType: AbsoluteResourceUri
+      - Name: CSVSeparator
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ","
+      - Name: WrapFields
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: RecipeName
+        Type: BaseDataVariableType
+        DataType: String
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../MainMenu/RecipeList/SelectedValue"
+      - Name: ErrorPolicy
+        Type: BaseDataVariableType
+        DataType: CopyErrorPolicy
+      - Name: ApplyFromDBTrigger
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: ApplyFromEditModelTrigger
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: DeleteTrigger
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: ExportTrigger
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: ImportTrigger
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: LoadFromPLCTrigger
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: SaveToDBTrigger
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: SelectFromDBTrigger
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: RecipeControllerCreatedAndSaved
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipeControllerCreatedAndSaved"}
+      - Name: RecipeControllerDeleted
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipeControllerDeleted"}
+      - Name: RecipeControllerEmptyRecipeName
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipeControllerEmptyRecipeName"}
+      - Name: RecipeControllerRecipe
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipeControllerRecipe"}
+      - Name: RecipeControllerRecipeApplied
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipeControllerRecipeApplied"}
+      - Name: RecipeControllerRecipeLoaded
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipeControllerRecipeLoaded"}
+      - Name: RecipeControllerSaved
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipeControllerSaved"}
+      - Name: RecipesEditorRecipeSchemaNotFound
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipesEditorRecipeSchemaNotFound"}
+      - Name: RecipesEditorRecipeSchemaNotSet
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipesEditorRecipeSchemaNotSet"}
+      - Name: RecipesEditorRecipeNotFound
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipesEditorRecipeNotFound"}
+      - Name: RecipesEditorNotARecipe
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipesEditorNotARecipe"}
+      - Name: RecipesEditorStoreOfSchema
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipesEditorStoreOfSchema"}
+      - Name: RecipesEditorNotSet
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipesEditorNotSet"}
+      - Name: RecipesEditorStore
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipesEditorStore"}
+      - Name: RecipesEditorNotFound
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipesEditorNotFound"}
+      - Name: RecipesEditorNotAStore
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipesEditorNotAStore"}
+      - Name: RecipesEditorEditModelOfSchema
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        AccessLevel: Read
+        Value: {"NamespaceIndex":22,"TextId":"RecipesEditorEditModelOfSchema"}
+      - Name: EditModelChanged
+        Type: BaseDataVariableType
+        DataType: Boolean
+    - Name: SaveRecipeConfirmation
+      Type: ConfirmationDialogContext
+      Children:
+      - Name: OnConfirm
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../RecipeController@NodeId"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "SaveToDB"
+        - Name: InputArguments
+          Type: BaseObjectType
+          Children:
+          - Name: RecipeName
+            Type: BaseDataVariableType
+            DataType: String
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../RecipeController/RecipeName"
+          - Name: ErrorPolicy
+            Type: BaseDataVariableType
+            DataType: CopyErrorPolicy
+      - Name: OnCancel
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+      - Name: Message
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Confirm save?"}
+      - Name: UIAction
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/Commands/VariableCommands"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Toggle"
+        - Name: InputArguments
+          Type: BaseObjectType
+          Children:
+          - Name: VariableToModify
+            Type: BaseDataVariableType
+            DataType: VariablePointer
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../ForceRefreshOnSave@NodeId"
+          - Name: ArrayIndex
+            Type: BaseDataVariableType
+            DataType: UInt32
+            ValueRank: ScalarOrOneDimension
+      - Name: RecipeAction
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+    - Name: DeleteRecipeConfirmation
+      Type: ConfirmationDialogContext
+      Children:
+      - Name: OnConfirm
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../RecipeController@NodeId"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Delete"
+        - Name: InputArguments
+          Type: BaseObjectType
+          Children:
+          - Name: RecipeName
+            Type: BaseDataVariableType
+            DataType: String
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../RecipeController/RecipeName"
+      - Name: OnCancel
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+      - Name: Message
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Confirm delete?"}
+      - Name: UIAction
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/Commands/VariableCommands"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Toggle"
+        - Name: InputArguments
+          Type: BaseObjectType
+          Children:
+          - Name: VariableToModify
+            Type: BaseDataVariableType
+            DataType: VariablePointer
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../ForceUIRefreshOnDelete@NodeId"
+          - Name: ArrayIndex
+            Type: BaseDataVariableType
+            DataType: UInt32
+            ValueRank: ScalarOrOneDimension
+      - Name: RecipeAction
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../RecipeController@NodeId"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "ResetEditModel"
+        - Name: InputArguments
+          Type: BaseObjectType
+          Children:
+          - Name: editModelId
+            Type: BaseDataVariableType
+            DataType: NodeId
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../RecipesEditor1/RecipeSchemaEditModel@NodeId"
+    - Name: LoadRecipeConfirmation
+      Type: ConfirmationDialogContext
+      Children:
+      - Name: OnConfirm
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../RecipeController@NodeId"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "LoadFromPLC"
+        - Name: InputArguments
+          Type: BaseObjectType
+          Children:
+          - Name: ErrorPolicy
+            Type: BaseDataVariableType
+            DataType: CopyErrorPolicy
+      - Name: OnCancel
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+      - Name: Message
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Confirm load?"}
+      - Name: UIAction
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/Commands/VariableCommands"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Toggle"
+        - Name: InputArguments
+          Type: BaseObjectType
+          Children:
+          - Name: VariableToModify
+            Type: BaseDataVariableType
+            DataType: VariablePointer
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../ForceUIRefreshOnDelete@NodeId"
+          - Name: ArrayIndex
+            Type: BaseDataVariableType
+            DataType: UInt32
+            ValueRank: ScalarOrOneDimension
+      - Name: RecipeAction
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+    - Name: ApplyRecipeConfirmation
+      Type: ConfirmationDialogContext
+      Children:
+      - Name: OnConfirm
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../RecipeController@NodeId"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "ApplyFromDB"
+        - Name: InputArguments
+          Type: BaseObjectType
+          Children:
+          - Name: RecipeName
+            Type: BaseDataVariableType
+            DataType: String
+          - Name: ErrorPolicy
+            Type: BaseDataVariableType
+            DataType: CopyErrorPolicy
+      - Name: OnCancel
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+      - Name: Message
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Confirm apply?"}
+      - Name: UIAction
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+      - Name: RecipeAction
+        Type: MethodInvocation
+        Children:
+        - Class: Reference
+          Target: ns=5;i=98
+          Direction: Forward
+        - Name: ObjectPointer
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: Method
+          Type: BaseDataVariableType
+          DataType: String
+    - Name: LibraryReference
+      Type: ObjectLibraryReference
+      DataType: ObjectLibraryReferenceDataType
+      Value: 
+       {
+        "TypeId": {
+         "Id": 72,
+         "Namespace": 13
+        },
+        "Body": {
+         "libraryGuid": "5a4b7e93c06f223e505106c0f913b63b",
+         "objectGuid": "1605b4bce2d50a4e728a74a6d8448ee8",
+         "objectVersion": 1,
+         "highestIgnoredVersion": 0
+        }
+       }
 - File: Screens/Screens.yaml
 - File: RecipeWidget/RecipeWidget.yaml

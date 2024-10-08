@@ -14,6 +14,7 @@ using System.Globalization;
 using FTOptix.Store;
 using FTOptix.OPCUAServer;
 using System.Runtime.CompilerServices;
+using FTOptix.ODBCStore;
 
 #endregion
 
@@ -90,6 +91,11 @@ public class RecipeController : BaseNetLogic
     public void ResetEditModel(NodeId editModelId)
     {
         var editModel = InformationModel.Get(editModelId);
+        if (editModel == null)
+        {
+            Log.Error("ResetEditModel", "Cannot reset EditModel: not found");
+            return;
+        }
         foreach (var item in editModel.Children)
         {
             switch (item.NodeClass)

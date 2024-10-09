@@ -19,7 +19,7 @@ Children:
     Type: BaseVariableType
     DataType: Size
     ModellingRule: Optional
-    Value: 300.0
+    Value: 140.0
   - Name: ConfirmationDialogContext
     Type: Alias
     DataType: NodeId
@@ -79,11 +79,6 @@ Children:
       DataType: Size
       ModellingRule: Optional
       Value: 50.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 245.0
     - Name: Width
       Type: BaseVariableType
       DataType: Size
@@ -231,6 +226,16 @@ Children:
         - Name: Severity
           Type: PropertyType
           DataType: UInt16
+    - Name: VerticalAlignment
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 1
+    - Name: BottomMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
   - Name: Button2
     Type: Button
     Children:
@@ -242,13 +247,7 @@ Children:
     - Name: LeftMargin
       Type: BaseVariableType
       DataType: Size
-      ModellingRule: Optional
       Value: 180.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 245.0
     - Name: Width
       Type: BaseVariableType
       DataType: Size
@@ -341,6 +340,20 @@ Children:
         - Name: Severity
           Type: PropertyType
           DataType: UInt16
+    - Name: Height
+      Type: BaseVariableType
+      DataType: Size
+      Value: -1.0
+    - Name: VerticalAlignment
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 1
+    - Name: BottomMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
   - Name: Label1
     Type: Label
     Children:
@@ -361,7 +374,11 @@ Children:
       Type: BaseVariableType
       DataType: VerticalAlignment
       ModellingRule: Optional
-      Value: 2
+    - Name: TopMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
   - Name: ns=13;LibraryReference
     Type: ObjectLibraryReference
     DataType: ObjectLibraryReferenceDataType
@@ -379,6 +396,18 @@ Children:
        "highestIgnoredVersion": 0
       }
      }
+  - Name: MoveTarget
+    Type: NodePointer
+    DataType: NodeId
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "..@NodeId"
 - Name: ConfirmationDialogContext
   Id: g=8be70b385fa6b0c193148c04d2961b0b
   Supertype: BaseObjectType

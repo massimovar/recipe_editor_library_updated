@@ -280,7 +280,6 @@ public class RecipesEditorUISetup : BaseNetLogic
         string aliasRelativeNodePath = MakeNodePathRelativeToAlias(schema.BrowseName, browsePath);
         MakeDynamicLink(durationPicker.GetVariable("Value"), aliasRelativeNodePath);
         panel.Add(durationPicker);
-
         return panel;
     }
 
@@ -302,7 +301,6 @@ public class RecipesEditorUISetup : BaseNetLogic
             string aliasRelativeNodePath = MakeNodePathRelativeToAlias(schema.BrowseName, browsePath);
             MakeDynamicLink(durationPicker.GetVariable("Value"), aliasRelativeNodePath, index);
             panel.Add(durationPicker);
-
             result.Add(panel);
         }
 
@@ -324,7 +322,6 @@ public class RecipesEditorUISetup : BaseNetLogic
         string aliasRelativeNodePath = MakeNodePathRelativeToAlias(schema.BrowseName, browsePath);
         MakeDynamicLink(spinbox.GetVariable("Value"), aliasRelativeNodePath);
         panel.Add(spinbox);
-
         return panel;
     }
 
@@ -348,10 +345,8 @@ public class RecipesEditorUISetup : BaseNetLogic
             string aliasRelativeNodePath = MakeNodePathRelativeToAlias(schema.BrowseName, browsePath);
             MakeDynamicLink(spinbox.GetVariable("Value"), aliasRelativeNodePath, index);
             panel.Add(spinbox);
-
             result.Add(panel);
         }
-
         return result;
     }
 
@@ -368,7 +363,6 @@ public class RecipesEditorUISetup : BaseNetLogic
         string aliasRelativeNodePath = MakeNodePathRelativeToAlias(schema.BrowseName, browsePath);
         MakeDynamicLink(textbox.GetVariable("Text"), aliasRelativeNodePath);
         panel.Add(textbox);
-
         return panel;
     }
 
@@ -390,10 +384,8 @@ public class RecipesEditorUISetup : BaseNetLogic
             string aliasRelativeNodePath = MakeNodePathRelativeToAlias(schema.BrowseName, browsePath);
             MakeDynamicLink(textbox.GetVariable("Text"), aliasRelativeNodePath, index);
             panel.Add(textbox);
-
             result.Add(panel);
         }
-
         return result;
     }
 
@@ -410,7 +402,6 @@ public class RecipesEditorUISetup : BaseNetLogic
         string aliasRelativeNodePath = MakeNodePathRelativeToAlias(schema.BrowseName, browsePath);
         MakeDynamicLink(switchControl.GetVariable("Checked"), aliasRelativeNodePath);
         panel.Add(switchControl);
-
         return panel;
     }
 

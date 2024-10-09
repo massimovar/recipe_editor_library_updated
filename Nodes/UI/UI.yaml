@@ -236,22 +236,6 @@ Children:
     - Name: GenerateTranslationKeys
       Type: BaseDataVariableType
       DataType: Boolean
-    - Name: LibraryReference
-      Type: ObjectLibraryReference
-      DataType: ObjectLibraryReferenceDataType
-      Value: 
-       {
-        "TypeId": {
-         "Id": 72,
-         "Namespace": 13
-        },
-        "Body": {
-         "libraryGuid": "de905a58759b4ff38bbb66c9d44c67ad",
-         "objectGuid": "9ca79497a9f25b5941adc5c621736682",
-         "objectVersion": 1,
-         "highestIgnoredVersion": 0
-        }
-       }
     - Name: RecipeSchema
       Type: NodePointer
       DataType: NodeId
@@ -2288,21 +2272,6 @@ Children:
         - Name: Method
           Type: BaseDataVariableType
           DataType: String
-        - Name: InputArguments
-          Type: BaseObjectType
-          Children:
-          - Name: VariableToModify
-            Type: BaseDataVariableType
-            DataType: VariablePointer
-            Children:
-            - Name: DynamicLink
-              Type: DynamicLink
-              DataType: NodePath
-              Value: "../../../../ForceUIRefreshOnDelete@NodeId"
-          - Name: ArrayIndex
-            Type: BaseDataVariableType
-            DataType: UInt32
-            ValueRank: ScalarOrOneDimension
       - Name: RecipeAction
         Type: MethodInvocation
         Children:
@@ -2609,20 +2578,85 @@ Children:
         Type: BehaviourStartPriorityVariableType
         DataType: Byte
         Value: 180
-    - Name: LeftMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 13.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 60.0
     - Name: ResetUIAfterRecipeDeletion
       Type: BaseDataVariableType
       DataType: Boolean
-    - Name: RefreshUIChanged
+    - Name: ResetUIAfterRecipeCreation
+      Type: BaseDataVariableType
+      DataType: Boolean
+    - Name: ResetUIAfterRecipeCreationChanged
+      Type: VariableChangedEventDispatcher
+      Children:
+      - Name: VariableNodePath
+        Type: BaseVariableType
+        DataType: NodePath
+        Value: "../ResetUIAfterRecipeCreation"
+      - Name: VariableValueChangedEventHandler1
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+        - Name: MethodsToCall
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Type: NodePointer
+              DataType: NodeId
+              Children:
+              - Name: Kind
+                Type: PropertyType
+                DataType: NodeId
+                Value: "/Types/ObjectTypes/BaseObjectType"
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../Wrapper/MainMenu/RecipeList@NodeId"
+            - Name: Method
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Refresh"
+        - Name: EventArguments
+          Type: VariableValueChangedEvent
+          Children:
+          - Name: VariableNodeId
+            Type: BaseVariableType
+            DataType: NodeId
+          - Name: NewValue
+            Type: BaseVariableType
+            DataType: BaseDataType
+          - Name: OldValue
+            Type: BaseVariableType
+            DataType: BaseDataType
+          - Name: EventId
+            Type: PropertyType
+            DataType: ByteString
+          - Name: EventType
+            Type: PropertyType
+            DataType: NodeId
+          - Name: SourceNode
+            Type: PropertyType
+            DataType: NodeId
+          - Name: SourceName
+            Type: PropertyType
+            DataType: String
+          - Name: Time
+            Type: PropertyType
+            DataType: UtcTime
+          - Name: ReceiveTime
+            Type: PropertyType
+            DataType: UtcTime
+          - Name: Message
+            Type: PropertyType
+            DataType: LocalizedText
+          - Name: Severity
+            Type: PropertyType
+            DataType: UInt16
+    - Name: ResetUIAfterRecipeDeletionChanged
       Type: VariableChangedEventDispatcher
       Children:
       - Name: VariableNodePath
@@ -2692,81 +2726,6 @@ Children:
                 Type: BaseDataVariableType
                 DataType: UInt32
                 ValueRank: ScalarOrOneDimension
-        - Name: EventArguments
-          Type: VariableValueChangedEvent
-          Children:
-          - Name: VariableNodeId
-            Type: BaseVariableType
-            DataType: NodeId
-          - Name: NewValue
-            Type: BaseVariableType
-            DataType: BaseDataType
-          - Name: OldValue
-            Type: BaseVariableType
-            DataType: BaseDataType
-          - Name: EventId
-            Type: PropertyType
-            DataType: ByteString
-          - Name: EventType
-            Type: PropertyType
-            DataType: NodeId
-          - Name: SourceNode
-            Type: PropertyType
-            DataType: NodeId
-          - Name: SourceName
-            Type: PropertyType
-            DataType: String
-          - Name: Time
-            Type: PropertyType
-            DataType: UtcTime
-          - Name: ReceiveTime
-            Type: PropertyType
-            DataType: UtcTime
-          - Name: Message
-            Type: PropertyType
-            DataType: LocalizedText
-          - Name: Severity
-            Type: PropertyType
-            DataType: UInt16
-    - Name: ResetUIAfterRecipeCreation
-      Type: BaseDataVariableType
-      DataType: Boolean
-    - Name: ResetUIAfterRecipeCreationChanged
-      Type: VariableChangedEventDispatcher
-      Children:
-      - Name: VariableNodePath
-        Type: BaseVariableType
-        DataType: NodePath
-        Value: "../ResetUIAfterRecipeCreation"
-      - Name: VariableValueChangedEventHandler1
-        Type: EventHandler
-        Children:
-        - Name: ListenEventType
-          Type: PropertyType
-          DataType: NodeId
-          Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
-        - Name: MethodsToCall
-          Type: BaseObjectType
-          Children:
-          - Name: MethodContainer1
-            Type: BaseObjectType
-            Children:
-            - Name: ObjectPointer
-              Type: NodePointer
-              DataType: NodeId
-              Children:
-              - Name: Kind
-                Type: PropertyType
-                DataType: NodeId
-                Value: "/Types/ObjectTypes/BaseObjectType"
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "../../../../../Wrapper/MainMenu/RecipeList@NodeId"
-            - Name: Method
-              Type: BaseDataVariableType
-              DataType: String
-              Value: "Refresh"
         - Name: EventArguments
           Type: VariableValueChangedEvent
           Children:

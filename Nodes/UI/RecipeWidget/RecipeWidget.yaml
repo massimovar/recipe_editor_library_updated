@@ -12,6 +12,7 @@ Children:
   - Name: ns=13;LibraryReference
     Type: ObjectLibraryReference
     DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
     Value: 
      {
       "TypeId": {
@@ -19,8 +20,8 @@ Children:
        "Namespace": 13
       },
       "Body": {
-       "libraryGuid": "de905a58759b4ff38bbb66c9d44c67ad",
-       "objectGuid": "9ca79497a9f25b5941adc5c621736682",
+       "libraryGuid": "74d05e94a7a98386b4116547588ca41a",
+       "objectGuid": "133798a0560fbee46d7221ef66efe811",
        "objectVersion": 1,
        "highestIgnoredVersion": 0
       }
@@ -1625,7 +1626,7 @@ Children:
       Type: BaseDataVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 10.0
+      Value: 20.0
   - Name: Width
     Type: BaseVariableType
     DataType: Size
@@ -2637,6 +2638,121 @@ Children:
         - Name: Severity
           Type: PropertyType
           DataType: UInt16
+  - Name: ResetUIAfterRecipeDeletionChanged
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../ResetUIAfterRecipeDeletion"
+    - Name: VariableValueChangedEventHandler1
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Type: BaseObjectType
+          Children:
+          - Name: ns=5;ObjectPointer
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Wrapper/MainMenu/RecipeList@NodeId"
+              Children:
+              - Name: Mode
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: ns=5;Method
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Refresh"
+        - Name: MethodContainer2
+          Type: BaseObjectType
+          Children:
+          - Name: ns=5;ObjectPointer
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=5;Method
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Set"
+          - Name: InputArguments
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":5,"TextId":"SetVariableToModifyDescription"}
+              Children:
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../Wrapper/MainEditor/RecipeNameTbx/Text@NodeId"
+            - Name: Value
+              Type: BaseDataVariableType
+              DataType: LocalizedText
+              Description: {"NamespaceIndex":5,"TextId":"SetValueDescription"}
+            - Name: ArrayIndex
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":5,"TextId":"SetArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+      - Name: EventArguments
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Type: PropertyType
+          DataType: UInt16
 - File: ConfirmationDialog/ConfirmationDialog.yaml
 - Name: ns=13;LibraryReference
   Type: ObjectLibraryReference
@@ -2648,8 +2764,8 @@ Children:
      "Namespace": 13
     },
     "Body": {
-     "libraryGuid": "74d05e94a7a98386b4116547588ca41a",
-     "objectGuid": "17e20786904e6b012563d4c68f2eae0b",
+     "libraryGuid": "0d3cc6f1268d4ea50b65587701fffadd",
+     "objectGuid": "f28ef3ffc43afdd70f93750ce5d98473",
      "objectVersion": 1,
      "highestIgnoredVersion": 0
     }

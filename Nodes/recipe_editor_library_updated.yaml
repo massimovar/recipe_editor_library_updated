@@ -47,10 +47,10 @@ Children:
     Value: 8
 - Name: AlarmConfiguration
   Type: PropertyGroup
+- File: Recipes/Recipes.yaml
 - File: UI/UI.yaml
 - File: Model/Model.yaml
 - File: Converters/Converters.yaml
-- File: Recipes/Recipes.yaml
 - File: Alarms/Alarms.yaml
 - File: Loggers/Loggers.yaml
 - File: DataStores/DataStores.yaml

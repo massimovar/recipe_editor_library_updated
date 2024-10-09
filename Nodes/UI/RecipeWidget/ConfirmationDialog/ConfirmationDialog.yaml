@@ -28,7 +28,7 @@ Children:
       Type: PropertyType
       DataType: NodeId
       Value: "/Objects/recipe_editor_library_updated/UI/RecipeWidget/ConfirmationDialog/ConfirmationDialogContext"
-  - Name: Rectangle1
+  - Name: Background
     Type: Rectangle
     Children:
     - Name: Width
@@ -45,7 +45,7 @@ Children:
       Type: BaseDataVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 3.0
+      Value: 2.0
     - Name: HorizontalAlignment
       Type: BaseVariableType
       DataType: HorizontalAlignment
@@ -60,7 +60,7 @@ Children:
       Type: BaseDataVariableType
       DataType: Color
       ModellingRule: Optional
-      Value: "#565555"
+      Value: "#8b8a8a"
     - Name: CornerRadius
       Type: BaseDataVariableType
       DataType: Size

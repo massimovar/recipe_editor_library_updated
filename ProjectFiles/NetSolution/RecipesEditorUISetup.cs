@@ -86,7 +86,7 @@ public class RecipesEditorUISetup : BaseNetLogic
 
     private ColumnLayout GetControlsContainer()
     {
-        var scrollView = Owner.Get("ScrollView");
+        var scrollView = Owner.Find<ScrollView>("ScrollView");
         if (scrollView == null)
             throw new Exception("ScrollView not found");
 

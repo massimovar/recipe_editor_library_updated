@@ -1264,7 +1264,7 @@ Children:
                     - Name: DynamicLink
                       Type: DynamicLink
                       DataType: NodePath
-                      Value: "../../../../../../../../../ApplyRecipeConfirmation@NodeId"
+                      Value: "../../../../../../../../../ApplyRecipeFromDBConfirmation@NodeId"
                   - Name: ParentItem
                     Type: BaseDataVariableType
                     DataType: NodeId
@@ -1414,7 +1414,7 @@ Children:
                     - Name: DynamicLink
                       Type: DynamicLink
                       DataType: NodePath
-                      Value: "../../../../../../../../../ApplyRecipeConfirmation@NodeId"
+                      Value: "../../../../../../../../../ApplyRecipeFromEditModelConfirmation@NodeId"
                   - Name: ParentItem
                     Type: BaseDataVariableType
                     DataType: NodeId
@@ -2262,7 +2262,7 @@ Children:
       - Name: Method
         Type: BaseDataVariableType
         DataType: String
-  - Name: ApplyRecipeConfirmation
+  - Name: ApplyRecipeFromDBConfirmation
     Type: ConfirmationDialogContext
     Children:
     - Name: OnConfirm
@@ -2768,6 +2768,98 @@ Children:
         - Name: Severity
           Type: PropertyType
           DataType: UInt16
+  - Name: ApplyRecipeFromEditModelConfirmation
+    Type: ConfirmationDialogContext
+    Children:
+    - Name: OnConfirm
+      Type: MethodInvocation
+      Children:
+      - Class: Reference
+        Target: ns=5;i=98
+        Direction: Forward
+      - Name: ObjectPointer
+        Type: NodePointer
+        DataType: NodeId
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../RecipeController@NodeId"
+          Children:
+          - Name: Mode
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: Method
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "ApplyFromEditModel"
+      - Name: InputArguments
+        Type: BaseObjectType
+        Children:
+        - Name: ErrorPolicy
+          Type: BaseDataVariableType
+          DataType: CopyErrorPolicy
+    - Name: OnCancel
+      Type: MethodInvocation
+      Children:
+      - Class: Reference
+        Target: ns=5;i=98
+        Direction: Forward
+      - Name: ObjectPointer
+        Type: NodePointer
+        DataType: NodeId
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType"
+      - Name: Method
+        Type: BaseDataVariableType
+        DataType: String
+    - Name: Message
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Value: {"LocaleId":"en-US","Text":"Confirm apply?"}
+    - Name: UIAction
+      Type: MethodInvocation
+      Children:
+      - Class: Reference
+        Target: ns=5;i=98
+        Direction: Forward
+      - Name: ObjectPointer
+        Type: NodePointer
+        DataType: NodeId
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType"
+      - Name: Method
+        Type: BaseDataVariableType
+        DataType: String
+    - Name: RecipeAction
+      Type: MethodInvocation
+      Children:
+      - Class: Reference
+        Target: ns=5;i=98
+        Direction: Forward
+      - Name: ObjectPointer
+        Type: NodePointer
+        DataType: NodeId
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType"
+      - Name: Method
+        Type: BaseDataVariableType
+        DataType: String
 - File: ConfirmationDialog/ConfirmationDialog.yaml
 - Name: ns=13;LibraryReference
   Type: ObjectLibraryReference

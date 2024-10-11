@@ -116,8 +116,6 @@ public class RecipeController : BaseNetLogic
     }
 
 
-
-
     [ExportMethod]
     public void ResetEditModel(NodeId editModelId)
     {

@@ -534,6 +534,19 @@ Children:
             Type: BaseDataVariableType
             DataType: Boolean
             Value: true
+            Children:
+            - Name: ExpressionEvaluator1
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Source0
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../RecipeController/EditModelChanged"
       - Name: MainEditor
         Type: ColumnLayout
         Children:
@@ -830,6 +843,19 @@ Children:
               Type: BaseDataVariableType
               DataType: Boolean
               Value: true
+              Children:
+              - Name: ExpressionEvaluator1
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../../RecipeController/EditModelChanged"
           - Name: ResetEditModelButton
             Type: Button
             Children:

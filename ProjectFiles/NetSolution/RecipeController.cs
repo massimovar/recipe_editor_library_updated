@@ -61,6 +61,14 @@ public class RecipeController : BaseNetLogic
         ListenToEditModelChanges();
     }
 
+    public override void Stop()
+    {
+        lock (lockObject)
+        {
+            task?.Dispose();
+        }
+    }
+
     private void ListenToEditModelChanges()
     {
         RecipeSchema schema = GetRecipeSchema();
@@ -75,16 +83,39 @@ public class RecipeController : BaseNetLogic
 
     private void ToggleEditModelChanged(object sender, VariableChangeEventArgs e)
     {
-        EditModelChanged.Value = !EditModelChanged.Value;
+        // TODO: save or discard must set EditModelChanged to 0 
+        var editModelChanged = EditModelMatchesSchema();
+        EditModelChanged.Value = EditModelMatchesSchema();
+        var editModelItem = (UAVariable) sender;
+
+        if (!editModelChanged) return;
+        Log.Info($"Edit model changed, modified tag: {editModelItem.BrowseName} with value {editModelItem.Value}");
     }
 
-    public override void Stop()
+    private bool EditModelMatchesSchema()
     {
-        lock (lockObject)
+        RecipeSchema schema = GetRecipeSchema();
+        var editModel = schema.GetObject("EditModel");
+        var schemaStore = InformationModel.Get<Store>(schema.StoreVariable.Value);
+        var selectedRecipe = LogicObject.GetVariable("RecipeName").Value.Value;
+
+        schemaStore.Query($"SELECT * FROM {schema.BrowseName} WHERE Name = \"{ selectedRecipe}\"", out string[] header, out object[,] res);
+
+        foreach (IUAVariable item in editModel.Children)
         {
-            task?.Dispose();
+            var recipeSchemaDbItemColumnIndex = Array.IndexOf(header, "/" + item.BrowseName);
+            var schemaValue = res[0,recipeSchemaDbItemColumnIndex];
+            var itemType = item.Value.Value.GetType();
+            var schemaValueCasted = Convert.ChangeType(schemaValue, itemType);
+            if (!item.Value.Value.Equals(schemaValueCasted)) { 
+                return  true; 
+            }
         }
+        
+        return false;
     }
+
+
 
 
     [ExportMethod]
@@ -211,6 +242,8 @@ public class RecipeController : BaseNetLogic
                     schema.CopyToStoreRecipe(editModel.NodeId, name, ErrorPolicy);
                     SetFeedback(1, $"{GetLocalizedTextString("RecipeControllerRecipe")} {name} {GetLocalizedTextString("RecipeControllerCreatedAndSaved")}");
                 }
+
+
             }
         }
         catch (Exception e)

@@ -23,6 +23,12 @@ Children:
     - Name: Variable5_PLC3
       Type: BaseDataVariableType
       DataType: Int32
+    - Name: Variable1
+      Type: BaseDataVariableType
+      DataType: String
+    - Name: Variable2
+      Type: BaseDataVariableType
+      DataType: Boolean
   - Class: Reference
     Target: ns=15;i=27
     Direction: Forward
@@ -59,18 +65,6 @@ Children:
   - Class: Reference
     Target: ns=15;i=60
     Direction: Forward
-  - Name: Store
-    Type: NodePointer
-    DataType: NodeId
-    Value: "/Objects/recipe_editor_library_updated/DataStores/EmbeddedDatabase1"
-    Children:
-    - Name: Kind
-      Type: PropertyType
-      DataType: NodeId
-      Value: "/Types/ObjectTypes/BaseObjectType/Store"
-  - Name: TableName
-    Type: BaseDataVariableType
-    DataType: String
   - Name: TargetNode
     Type: NodePointer
     DataType: NodeId
@@ -80,7 +74,7 @@ Children:
       Type: PropertyType
       DataType: NodeId
   - Name: EditModel
-    Id: g=7dd96e1ced3667a0d8bd18fa613b6ce0
+    Id: g=5eae6102a596d1ff47433a85142fa836
     Type: BaseObjectType
     Children:
     - Name: Variable1_PLC1
@@ -98,3 +92,18 @@ Children:
     - Name: Variable5_PLC3
       Type: BaseDataVariableType
       DataType: Int32
+    - Name: Variable1
+      Type: BaseDataVariableType
+      DataType: String
+    - Name: Variable2
+      Type: BaseDataVariableType
+      DataType: Boolean
+  - Name: Store
+    Type: NodePointer
+    DataType: NodeId
+    Value: "/Objects/recipe_editor_library_updated/DataStores/EmbeddedDatabase1"
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/ObjectTypes/BaseObjectType/Store"

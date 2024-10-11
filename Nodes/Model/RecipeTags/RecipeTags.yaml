@@ -22,3 +22,12 @@ Children:
   Id: g=0877bc1193c199f9dff8e810def35a2c
   Type: BaseDataVariableType
   DataType: Int32
+- Name: Variable1
+  Id: g=cdad283b590bda74ae86ef5d2417c641
+  Type: BaseDataVariableType
+  DataType: String
+  Value: "0"
+- Name: Variable2
+  Id: g=4c4ed826cc18bc2b6ebfc92b9147e05c
+  Type: BaseDataVariableType
+  DataType: Boolean

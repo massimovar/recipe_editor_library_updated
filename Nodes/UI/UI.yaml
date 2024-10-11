@@ -376,7 +376,6 @@ Children:
           - Name: Model
             Type: NodePointer
             DataType: NodeId
-            Value: "/Objects/recipe_editor_library_updated/DataStores/EmbeddedDatabase1"
             Children:
             - Name: ItemKind
               Type: PropertyType
@@ -384,6 +383,10 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../RecipeSchema/Store@NodeId"
           - Name: SelectedValue
             Type: BaseDataVariableType
             DataType: BaseDataType
@@ -527,6 +530,10 @@ Children:
           - Name: StartingSelectedValue
             Type: BaseDataVariableType
             DataType: String
+          - Name: Enabled
+            Type: BaseDataVariableType
+            DataType: Boolean
+            Value: true
       - Name: MainEditor
         Type: ColumnLayout
         Children:
@@ -819,6 +826,10 @@ Children:
                 - Name: Severity
                   Type: PropertyType
                   DataType: UInt16
+            - Name: Enabled
+              Type: BaseDataVariableType
+              DataType: Boolean
+              Value: true
           - Name: ResetEditModelButton
             Type: Button
             Children:
@@ -991,6 +1002,15 @@ Children:
                 - Name: Severity
                   Type: PropertyType
                   DataType: UInt16
+            - Name: Enabled
+              Type: BaseDataVariableType
+              DataType: Boolean
+              Value: true
+              Children:
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../RecipeController/EditModelChanged"
           - Name: LoadButton
             Type: Button
             Children:
@@ -1287,7 +1307,7 @@ Children:
               Type: BaseVariableType
               DataType: Size
               ModellingRule: Optional
-              Value: 200.0
+              Value: 280.0
             - Name: HorizontalAlignment
               Type: BaseVariableType
               DataType: HorizontalAlignment
@@ -1758,6 +1778,182 @@ Children:
                   DataType: String
                   ModellingRule: Optional
                   Value: "n0"
+            - Name: Variable1
+              Type: Panel
+              Children:
+              - Name: Height
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 40.0
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 3
+              - Name: Path
+                Type: Label
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Variable1"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 20.0
+                - Name: VerticalAlignment
+                  Type: BaseVariableType
+                  DataType: VerticalAlignment
+                  ModellingRule: Optional
+                  Value: 2
+              - Name: CurrentValue
+                Type: Label
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable1"
+                - Name: VerticalAlignment
+                  Type: BaseVariableType
+                  DataType: VerticalAlignment
+                  ModellingRule: Optional
+                  Value: 2
+                - Name: HorizontalAlignment
+                  Type: BaseVariableType
+                  DataType: HorizontalAlignment
+                  ModellingRule: Optional
+                  Value: 1
+              - Name: Textbox
+                Type: TextBox
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "{RecipeSchema1}/Variable1"
+                    Children:
+                    - Name: Mode
+                      Type: BaseVariableType
+                      DataType: DynamicLinkMode
+                      Value: 2
+                - Name: VerticalAlignment
+                  Type: BaseVariableType
+                  DataType: VerticalAlignment
+                  ModellingRule: Optional
+                  Value: 2
+                - Name: HorizontalAlignment
+                  Type: BaseVariableType
+                  DataType: HorizontalAlignment
+                  ModellingRule: Optional
+                  Value: 1
+                - Name: RightMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 100.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 100.0
+            - Name: Variable2
+              Type: Panel
+              Children:
+              - Name: Height
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 40.0
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 3
+              - Name: Path
+                Type: Label
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Variable2"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 20.0
+                - Name: VerticalAlignment
+                  Type: BaseVariableType
+                  DataType: VerticalAlignment
+                  ModellingRule: Optional
+                  Value: 2
+              - Name: CurrentValue
+                Type: Label
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/recipe_editor_library_updated/Model/RecipeTags/Variable2"
+                - Name: VerticalAlignment
+                  Type: BaseVariableType
+                  DataType: VerticalAlignment
+                  ModellingRule: Optional
+                  Value: 2
+                - Name: HorizontalAlignment
+                  Type: BaseVariableType
+                  DataType: HorizontalAlignment
+                  ModellingRule: Optional
+                  Value: 1
+              - Name: Switch
+                Type: Switch
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Children:
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "{RecipeSchema1}/Variable2"
+                    Children:
+                    - Name: Mode
+                      Type: BaseVariableType
+                      DataType: DynamicLinkMode
+                      Value: 2
+                - Name: VerticalAlignment
+                  Type: BaseVariableType
+                  DataType: VerticalAlignment
+                  ModellingRule: Optional
+                  Value: 2
+                - Name: HorizontalAlignment
+                  Type: BaseVariableType
+                  DataType: HorizontalAlignment
+                  ModellingRule: Optional
+                  Value: 1
+                - Name: RightMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 100.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 60.0
           - Name: Visible
             Type: BaseDataVariableType
             DataType: Boolean
@@ -1967,6 +2163,16 @@ Children:
       - Name: EditModelChanged
         Type: BaseDataVariableType
         DataType: Boolean
+    - Name: RecipesEditorUISetup
+      Type: NetLogic
+      Children:
+      - Class: Reference
+        Target: g=773438121b2f95f4fcce88f3afef3c88
+        Direction: Forward
+      - Name: BehaviourStartPriority
+        Type: BehaviourStartPriorityVariableType
+        DataType: Byte
+        Value: 180
     - Name: SaveRecipeConfirmation
       Type: ConfirmationDialogContext
       Children:
@@ -2568,16 +2774,6 @@ Children:
         - Name: Method
           Type: BaseDataVariableType
           DataType: String
-    - Name: RecipesEditorUISetup
-      Type: NetLogic
-      Children:
-      - Class: Reference
-        Target: g=773438121b2f95f4fcce88f3afef3c88
-        Direction: Forward
-      - Name: BehaviourStartPriority
-        Type: BehaviourStartPriorityVariableType
-        DataType: Byte
-        Value: 180
     - Name: ResetUIAfterRecipeDeletion
       Type: BaseDataVariableType
       DataType: Boolean

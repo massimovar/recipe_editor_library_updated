@@ -2,7 +2,7 @@ Name: DataStores
 Type: DataStoresCategoryFolder
 Children:
 - Name: EmbeddedDatabase1
-  Id: g=720cf0b29227a131d9c092a694d02dfd
+  Id: g=187028ef10cdc3b375a19ce31fa89d92
   Type: SQLiteStore
   Children:
   - Name: Tables
@@ -44,6 +44,12 @@ Children:
         - Name: /Variable5_PLC3
           Type: StoreColumn
           DataType: Int32
+        - Name: /Variable1
+          Type: StoreColumn
+          DataType: String
+        - Name: /Variable2
+          Type: StoreColumn
+          DataType: Boolean
   - Class: Reference
     Target: ns=19;i=30
     Direction: Forward

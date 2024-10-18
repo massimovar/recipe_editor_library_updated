@@ -3,31 +3,24 @@ Id: g=a7a309da49772627fe9807440d9f4b84
 Type: FolderType
 Children:
 - Name: Variable1_PLC1
-  Id: g=ccc82a51f124fd16f8818cc2974af8d0
   Type: BaseDataVariableType
   DataType: Int32
 - Name: Variable2_PLC1
-  Id: g=e9aca21056376f94f7adad34ffd376eb
   Type: BaseDataVariableType
   DataType: Int32
 - Name: Variable3_PLC2
-  Id: g=0e608903191a049926aa2d15cab60830
   Type: BaseDataVariableType
   DataType: Int32
 - Name: Variable4_PLC3
-  Id: g=7371cc9741cf83b6da5686791c5123e1
   Type: BaseDataVariableType
   DataType: Int32
 - Name: Variable5_PLC3
-  Id: g=0877bc1193c199f9dff8e810def35a2c
   Type: BaseDataVariableType
   DataType: Int32
 - Name: Variable1
-  Id: g=cdad283b590bda74ae86ef5d2417c641
   Type: BaseDataVariableType
   DataType: String
   Value: "0"
 - Name: Variable2
-  Id: g=4c4ed826cc18bc2b6ebfc92b9147e05c
   Type: BaseDataVariableType
   DataType: Boolean

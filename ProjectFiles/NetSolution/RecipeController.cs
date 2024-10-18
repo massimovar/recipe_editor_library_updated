@@ -77,19 +77,17 @@ public class RecipeController : BaseNetLogic
         if (editModelNode == null) return;
         foreach (IUAVariable item in editModelNode.Children)
         {
-            item.VariableChange += ToggleEditModelChanged;
+            item.VariableChange += CheckDbEditModelDiff;
         }
     }
 
-    private void ToggleEditModelChanged(object sender, VariableChangeEventArgs e)
+    private void CheckDbEditModelDiff(object sender, VariableChangeEventArgs e)
     {
-        // TODO: save or discard must set EditModelChanged to 0 
         var editModelChanged = EditModelMatchesSchema();
         EditModelChanged.Value = EditModelMatchesSchema();
         var editModelItem = (UAVariable) sender;
-
         if (!editModelChanged) return;
-        Log.Info($"Edit model changed, modified tag: {editModelItem.BrowseName} with value {editModelItem.Value}");
+        Log.Verbose1($"Edit model changed, modified tag: {editModelItem.BrowseName} with value {editModelItem.Value}");
     }
 
     private bool EditModelMatchesSchema()

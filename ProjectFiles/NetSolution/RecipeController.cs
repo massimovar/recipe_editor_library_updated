@@ -84,7 +84,7 @@ public class RecipeController : BaseNetLogic
     private void CheckDbEditModelDiff(object sender, VariableChangeEventArgs e)
     {
         var editModelChanged = EditModelMatchesSchema();
-        EditModelChanged.Value = EditModelMatchesSchema();
+        EditModelChanged.Value = editModelChanged;
         var editModelItem = (UAVariable) sender;
         if (!editModelChanged) return;
         Log.Verbose1($"Edit model changed, modified tag: {editModelItem.BrowseName} with value {editModelItem.Value}");

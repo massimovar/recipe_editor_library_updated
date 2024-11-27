@@ -2,4 +2,3 @@ Name: Model
 Type: ModelCategoryFolder
 Children:
 - File: RecipeTags/RecipeTags.yaml
-- File: RecipeTags_OPC_UA/RecipeTags_OPC_UA.yaml

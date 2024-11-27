@@ -722,6 +722,40 @@ Children:
                     - Name: DialogNodeId
                       Type: BaseDataVariableType
                       DataType: NodeId
+                - Name: MethodContainer2
+                  Type: BaseObjectType
+                  Children:
+                  - Name: ObjectPointer
+                    Type: NodePointer
+                    DataType: NodeId
+                    Value: "/Objects/recipe_editor_library_updated/Recipes/RecipeSchema1"
+                    Children:
+                    - Name: Kind
+                      Type: PropertyType
+                      DataType: NodeId
+                      Value: "/Types/ObjectTypes/BaseObjectType"
+                    - Name: DynamicLink
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "../../../../../../../../RecipeController@NodeId"
+                  - Name: Method
+                    Type: BaseDataVariableType
+                    DataType: String
+                    Value: "SelectFromDB"
+                  - Name: InputArguments
+                    Type: BaseObjectType
+                    Children:
+                    - Name: RecipeName
+                      Type: BaseDataVariableType
+                      DataType: String
+                      Children:
+                      - Name: DynamicLink1
+                        Type: DynamicLink
+                        DataType: NodePath
+                        Value: "../../../../../../../../MainMenu/RecipeList/SelectedValue"
+                    - Name: ErrorPolicy
+                      Type: BaseDataVariableType
+                      DataType: CopyErrorPolicy
               - Name: EventArguments
                 Type: MouseClickEvent
                 Children:

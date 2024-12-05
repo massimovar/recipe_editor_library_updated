@@ -2091,7 +2091,6 @@ Children:
       - Name: ObjectPointer
         Type: NodePointer
         DataType: NodeId
-        Value: "/Objects/Commands/VariableCommands"
         Children:
         - Name: Kind
           Type: PropertyType
@@ -2100,24 +2099,6 @@ Children:
       - Name: Method
         Type: BaseDataVariableType
         DataType: String
-        Value: "Toggle"
-      - Name: InputArguments
-        Type: BaseObjectType
-        Children:
-        - Name: VariableToModify
-          Type: BaseDataVariableType
-          DataType: VariablePointer
-          Description: {"NamespaceIndex":5,"TextId":"ToggleVariableToModifyDescription"}
-          Children:
-          - Name: DynamicLink
-            Type: DynamicLink
-            DataType: NodePath
-            Value: "../../../../ResetUIAfterRecipeCreation@NodeId"
-        - Name: ArrayIndex
-          Type: BaseDataVariableType
-          DataType: UInt32
-          Description: {"NamespaceIndex":5,"TextId":"ToggleArrayIndexDescription"}
-          ValueRank: ScalarOrOneDimension
     - Name: RecipeAction
       Type: MethodInvocation
       Children:

@@ -2273,7 +2273,6 @@ Children:
         - Name: ObjectPointer
           Type: NodePointer
           DataType: NodeId
-          Value: "/Objects/Commands/VariableCommands"
           Children:
           - Name: Kind
             Type: PropertyType
@@ -2282,7 +2281,6 @@ Children:
         - Name: Method
           Type: BaseDataVariableType
           DataType: String
-          Value: "Toggle"
         - Name: InputArguments
           Type: BaseObjectType
           Children:

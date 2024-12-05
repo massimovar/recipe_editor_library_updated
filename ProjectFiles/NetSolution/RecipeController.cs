@@ -85,7 +85,7 @@ public class RecipeController : BaseNetLogic
     {
         var editModelChanged = EditModelMatchesSchema();
         EditModelChanged.Value = editModelChanged;
-        var editModelItem = (UAVariable) sender;
+        var editModelItem = (UAVariable)sender;
         if (!editModelChanged) return;
         Log.Verbose1($"Edit model changed, modified tag: {editModelItem.BrowseName} with value {editModelItem.Value}");
     }
@@ -97,19 +97,20 @@ public class RecipeController : BaseNetLogic
         var schemaStore = InformationModel.Get<Store>(schema.StoreVariable.Value);
         var selectedRecipe = LogicObject.GetVariable("RecipeName").Value.Value;
 
-        schemaStore.Query($"SELECT * FROM {schema.BrowseName} WHERE Name = \"{ selectedRecipe}\"", out string[] header, out object[,] res);
+        schemaStore.Query($"SELECT * FROM {schema.BrowseName} WHERE Name = \"{selectedRecipe}\"", out string[] header, out object[,] res);
 
         foreach (IUAVariable item in editModel.Children)
         {
             var recipeSchemaDbItemColumnIndex = Array.IndexOf(header, "/" + item.BrowseName);
-            var schemaValue = res[0,recipeSchemaDbItemColumnIndex];
+            var schemaValue = res[0, recipeSchemaDbItemColumnIndex];
             var itemType = item.Value.Value.GetType();
             var schemaValueCasted = Convert.ChangeType(schemaValue, itemType);
-            if (!item.Value.Value.Equals(schemaValueCasted)) { 
-                return  true; 
+            if (!item.Value.Value.Equals(schemaValueCasted))
+            {
+                return true;
             }
         }
-        
+
         return false;
     }
 
@@ -238,8 +239,8 @@ public class RecipeController : BaseNetLogic
                     schema.CopyToStoreRecipe(editModel.NodeId, name, ErrorPolicy);
                     SetFeedback(1, $"{GetLocalizedTextString("RecipeControllerRecipe")} {name} {GetLocalizedTextString("RecipeControllerCreatedAndSaved")}");
                 }
-
-
+                
+                EditModelChanged.Value = EditModelMatchesSchema();
             }
         }
         catch (Exception e)
